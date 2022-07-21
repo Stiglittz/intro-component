@@ -1,109 +1,138 @@
+:root {
+    --white: #FFFFFF;
+    --title-font: 'Outfit', sans-serif;
+    --text-font:  'Poppins', sans-serif;
+    --background-red: #FF7979;
+    --dark-blue: hsl(249, 10%, 26%); 
+    --grayish-blue: hsl(246, 25%, 77%);
+    --blue: hsl(248, 32%, 49%);
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --border-radious: 10px;
+    --border-radious-input: 5px;
+    --shadow-effect: 0 -4px 0 0 #00000017 inset;
+
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Outfit', sans-serif;
-    font-family: 'Poppins', sans-serif;
-    background-color: #FF7979;
+    background-color: var(--background-red);
     background-image: url('./images/bg-intro-desktop.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-.container {
+.intro {
+    padding-left: 16px;
+    padding-right: 16px;
     display: grid;
-    grid-template-columns: 55% 55%;
-    grid-template-rows: 30% 50% 20%;
-    grid-template-areas: "header1 header2"
-                         "section main"
-                         "footer footer";
-    width: 100%;
-    height: 100%;
+    place-items: center;
+    min-height: 100vh;
 }
 
-.price {
-    grid-area: header2;
-    display: flex;
-}
-
-.price p {
-    background-color: #5E54A4;
-    font-weight: 300;
-    color: #FFFFFF;
-    height: 43px;
-    width: 67%;
-    border-radius: 10px;
+.intro__header {
+    color: var(--white);
     text-align: center;
-    padding-top: 16px;
-    margin-top: 87px;
-    box-shadow: 0px 5px 7px #776b6b;
-    font-size: 16px;
-    font-weight: 800;
+    max-width: 600px;
 }
 
-.price p span {
-    font-size: 16px;
-    font-weight: 100;
+.intro__header-title {
+    font-family: var(--title-font);
+    box-shadow: var(--shadow-effect);
 }
 
-.title {
-    color: #FFFFFF;
-    grid-area: section;
-    width: 48%;
-    padding: 20px 20px 0 20px ;
-    margin: 0 auto;
+.intro__header-text {
+    font-family: var(--text-font);
 }
 
-.title h1 {
-    font-size: 33px;
+.intro__form {
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.intro__form-promo {
+    background-color: var(--blue) ;
+    padding: 16px;
+    border-radius: var(--border-radious);
+    text-align: center;
+    color: var(--white);
+    font-family: var(--title-font);
+}
+
+.intro__form-promo-bold{
     font-weight: bold;
 }
 
-.form__container {
-    grid-area: main;
-    background: #FFFFFF;
-    width: 67%;
-    border-radius: 10px;
+.intro__form-form {
+    background: var(--white);
+    font-family: var(--text-font);
+    display: grid;
+    padding: 40px;
+    border-radius: var(--border-radious);
+    box-shadow: var(--shadow-effect);
+    gap: 20px;
 }
 
-.input {
-    width: 85%;
-    height: 55px;
-    padding-left: 20px;
-    border-radius: 5px;
-    margin: 14px 32px;
-    color: #3D3B48;
-    font-size: 16px;
-    font-weight: 800;
-  }
+.intro_form-form-label {
+    display: grid;
+    padding: 15px;
+    padding-left: 32px;
+    border: 1px solid var(--blue);
+    border-radius: var(--border-radious-input);
+}
 
-.button {
-    width: 90%;
-    height: 55px;
-    padding-left: 20px;
-    border-radius: 5px;
-    margin: 14px 32px;
-    background: #38CC8B;
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    box-shadow: 0px 4px 4px #c4c4c4;
-  }
+.intro__form-form-input {
+    width: 100%;
+    display: grid;
+    border: none;
+    font-weight: bold;
+    font-family: var(--text-font);
+}
+
+.intro__form-form-input:focus-visible {
+    border: none;
+}
+
+.intro__form-form-button {
+    padding: 15px 0;
+    color: var(--white);
+    font-family: var(--text-font);
+    background-color: var(--green);
+    border-radius: var(--border-radious-input);
+    text-transform: uppercase;
+    line-height: 26px;
+    border: none;
+    letter-spacing: 1px;
+}
 
 .terms {
-    font-size: 12px; 
-    text-align: center; 
-    margin-bottom: 32px;
-    margin-top: -8px; 
+    font-size: 11px ;
+    margin-top: -10px;
+    padding-left: 65px;
 }
 
-.terms span {
+.terms__text {
+    font-family: var(--text-font);
     color: #BAB7D4;
 }
 
-.terms a {
+.terms__link {
+    font-family: var(--text-font);
+    color: var(--background-red); 
+    font-weight: bold;
     text-decoration: none;
-    color: #FF7979;
+}
+
+
+@media screen and (min-width: 764px) {
+    .intro {
+        grid-auto-flow:column;
+    }
+
+    .intro__header {
+        text-align: start;
+    }
 }
 
 
